@@ -4,7 +4,7 @@ import Results from "./Results";
 import "./Dictionary.css";
 
 export default function Dictionary(props) {
-  let [keyword, setKeyword] = useState("props.defaultKeyword");
+  let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
   let [loaded, setLoaded] = useState(false);
 
@@ -45,7 +45,7 @@ export default function Dictionary(props) {
             />
           </form>
           <div className="hint">
-            suggested words: sunrise, flower, sport ,music...
+            suggested words: sunrise, music, sport, flower...
           </div>
         </section>
         <Results results={results} />
@@ -53,6 +53,6 @@ export default function Dictionary(props) {
     );
   } else {
     load();
-    return "loading...";
+    return "Loading";
   }
 }
